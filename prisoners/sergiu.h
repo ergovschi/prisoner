@@ -9,7 +9,8 @@
 
 using namespace std;
 
-class Sergiu : public Prisoner
+class Sergiu : public Prisoner,
+               public Creatable<Sergiu>
 {
     public:
         Sergiu();
@@ -41,4 +42,3 @@ int Sergiu::getMove(int lastMove)
         return SETTLE;
     }
 }
-

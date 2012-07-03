@@ -4,6 +4,8 @@
 
 using namespace std;
 
+typedef Prisoner* (*CreateFunction)();
+
 int main(){
     char cr;
     cout <<"*-----------------------------------*\n"
@@ -12,7 +14,10 @@ int main(){
          <<"|                                   |\n"
          <<"*-----------------------------------*\n";
 
-    Prisoner s* = new Sergiu();
+    CreateFunction prisoners[1] = {NULL};
+    prisoners[0] = &Sergiu::Create;
+
+    Prisoner* s = prisoners[0]();
     cout << s->prisonerName;
     cin.get(cr);
     
