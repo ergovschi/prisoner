@@ -10,15 +10,4 @@ class Prisoner
         string prisonerName;
         int getMove();
 };
-
-template<typename T>
-class Creatable
-{
-    public:
-        static Prisoner* Create()
-        {
-            return new T;
-        }
-};
-
 #endif

@@ -10,7 +10,7 @@ PLAYERS=prisoners/*
 for p in $PLAYERS
 do
     sed "3 a\
-        #include \"$p\" "  genplay.cpp
+        #include \"$p\""  genplay.cpp
 done
 
 cat play.cpp >> genplay.cpp
