@@ -12,8 +12,8 @@ int main(){
          <<"|                                   |\n"
          <<"*-----------------------------------*\n";
 
-    Prisoner &s = Sergiu();
-    cout << s.prisonerName;
+    Prisoner s* = new Sergiu();
+    cout << s->prisonerName;
     cin.get(cr);
     
     return 0;
