@@ -1,26 +1,24 @@
-#include <iostream>
 #include <string>
 #include <iostream>
+#include <functional>
 #include "include/prisoner.h"
 
+#include "prisoners/sergiu.h"
 #define STOP cin.get(cr)
-
-using namespace std;
-
-typedef Prisoner* (*CreateFunction)();
 
 int main(){
 
     /*Bash is taking care of this */
 
+
     /* End of Bash generated code */
-    function<Prisoner*()> new_prisoner[] = 
+    std::function<Prisoner*()> new_prisoner[] = 
     {
-        [](){return new Sergiu;},
+[](){return new sergiu.h;},
     };
 
     char cr;
-    cout <<"*-----------------------------------*\n"
+    std::cout <<"*-----------------------------------*\n"
          <<"|                                   |\n"
          <<"|    PRISONER'S DILEMMA TOURNAMENT  |\n"
          <<"|                                   |\n"
@@ -29,7 +27,7 @@ int main(){
 
     Prisoner* s = new_prisoner[0]();
 
-    cout << s->prisonerName;
+    std::cout << s->prisonerName;
 
     STOP;
 

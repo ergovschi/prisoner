@@ -9,8 +9,7 @@
 
 using namespace std;
 
-class Sergiu : public Prisoner,
-               public Creatable<Sergiu>
+class Sergiu : public Prisoner
 {
     public:
         Sergiu();

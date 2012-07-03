@@ -2,7 +2,6 @@
 #include <iostream>
 #include <functional>
 #include "include/prisoner.h"
-#include "prisoners/sergiu.h"
 
 #define STOP cin.get(cr)
 
@@ -10,10 +9,10 @@ int main(){
 
     /*Bash is taking care of this */
 
+
     /* End of Bash generated code */
     std::function<Prisoner*()> new_prisoner[] = 
     {
-        [](){return new Sergiu;},
     };
 
     char cr;
