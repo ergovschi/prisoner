@@ -18,14 +18,20 @@ do
     " genplay.cpp
 done
 
+echo "The found players are: "
 I=0;
 for p in $PLAYERS
 do
-    NAME=`echo $p| cut -c11-`
-    sed -i "$(($NUM_PLAYERS+$I+15)) a\
+    NAME=`echo $p| cut -c11- | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/g' | sed 's/\.[^ ]*/ /g'`
+    sed -i "$(($NUM_PLAYERS+$I+12)) a\
         [](){return new $NAME;},
     " genplay.cpp
+    echo "  " $NAME
 done
+
+sed -i "$(($NUM_PLAYERS+$NUM_PLAYERS+14)) a\
+    num_players = $NUM_PLAYERS;
+" genplay.cpp
 
 
 echo "Compiling... " 

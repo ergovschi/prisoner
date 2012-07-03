@@ -9,15 +9,15 @@
 int main(){
 
     /*Bash is taking care of this */
-
-
-    /* End of Bash generated code */
     std::function<Prisoner*()> new_prisoner[] = 
     {
-[](){return new sergiu.h;},
+[](){return new Sergiu ;},
     };
+    int num_players;
+num_players = 1;
 
-    char cr;
+    /* End of Bash generated code */
+
     std::cout <<"*-----------------------------------*\n"
          <<"|                                   |\n"
          <<"|    PRISONER'S DILEMMA TOURNAMENT  |\n"
@@ -25,9 +25,15 @@ int main(){
          <<"*-----------------------------------*\n";
 
 
-    Prisoner* s = new_prisoner[0]();
+    char cr;
 
-    std::cout << s->prisonerName;
+
+    int i;
+    for (i = 0; i < num_players; i++)
+    {
+        Prisoner* s = new_prisoner[0]();
+        std::cout << s->prisonerName;
+    }
 
     STOP;
 
