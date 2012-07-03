@@ -1,6 +1,15 @@
+#include <string>
+#include "include/prisoner.h"
+
+#define STOP cin.get(cr)
 using namespace std;
 
 int main(){
+
+    /*Bash is taking care of this */
+
+    /* End of Bash generated code */
+
     char cr;
     cout <<"*-----------------------------------*\n"
          <<"|                                   |\n"
@@ -8,8 +17,6 @@ int main(){
          <<"|                                   |\n"
          <<"*-----------------------------------*\n";
 
-
-    cin.get(cr);
-    
+    STOP;
     return 0;
 }

@@ -9,7 +9,8 @@ echo "#include <iostream>" >> genplay.cpp
 PLAYERS=prisoners/*
 for p in $PLAYERS
 do
-    echo "#include \"$p\"" >> genplay.cpp
+    sed "3 a\
+        #include \"$p\" "  genplay.cpp
 done
 
 cat play.cpp >> genplay.cpp
