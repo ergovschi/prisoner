@@ -8,6 +8,6 @@ class Prisoner
 {
     public:
         string prisonerName;
-        int getMove();
+        virtual int getMove(int lastMove) = 0;
 };
 #endif

@@ -9,11 +9,11 @@ cat play.cpp >> genplay.cpp
 
 PLAYERS=prisoners/*
 
-NUM_PLAYERS=${#PLAYERS[@]}
+NUM_PLAYERS=3
 echo "There are $NUM_PLAYERS players..."
 for p in $PLAYERS
 do
-    sed -i "5 a\
+    sed -i "4 a\
         #include \"$p\"
     " genplay.cpp
 done
@@ -23,13 +23,13 @@ I=0;
 for p in $PLAYERS
 do
     NAME=`echo $p| cut -c11- | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/g' | sed 's/\.[^ ]*/ /g'`
-    sed -i "$(($NUM_PLAYERS+$I+12)) a\
+    sed -i "$(($NUM_PLAYERS+$I+14)) a\
         [](){return new $NAME;},
     " genplay.cpp
     echo "  " $NAME
 done
 
-sed -i "$(($NUM_PLAYERS+$NUM_PLAYERS+14)) a\
+sed -i "$(($NUM_PLAYERS+$NUM_PLAYERS+16)) a\
     num_players = $NUM_PLAYERS;
 " genplay.cpp
 

@@ -8,10 +8,10 @@
 
 using namespace std;
 
-class Sergiu : public Prisoner
+class Elena : public Prisoner
 {
     public:
-        Sergiu();
+        Elena();
         int getMove(int lastMove);
 
     protected:
@@ -21,22 +21,22 @@ class Sergiu : public Prisoner
         /* stuff to use for yourself */
 };
 
-Sergiu::Sergiu()
+Elena::Elena()
 {
     round = 0;
-    prisonerName = "Sergiu";
+    prisonerName = "Elena";
 }
 
-int Sergiu::getMove(int lastMove)
+int Elena::getMove(int lastMove)
 {
     if (round == 0) /* First round of the game, lastMove contains the total number */
     {               /* of rounds (4, 10 or 100)                                    */
         numRounds = lastMove;
 
-        return SETTLE;
+        return CLAIM;
     } else {
         opponent[round] = lastMove;
-        return SETTLE;
+        return CLAIM;
     }
     round += 1;
 }
